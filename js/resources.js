@@ -1,13 +1,17 @@
+/** @file resource.js
+ *
+ * TODO: 描述文件
+ */
+
 /**
- * @description 单例对象，用于管理资源
- * @type {{cache: {}, readyCallbacks: Array, load: (function(...[string])), _load: (function(string)), isReady: (function(): boolean), get: (function(*=): Object), onReady: (function(*=))}}
+ * 理资源对象
  */
 let resources = {
     cache: {},
     readyCallbacks: [],
 
     /**
-     * @description 加载并缓存url指定的资源，若url已注册，则不执行任何操作。
+     * 加载并缓存url指定的资源，若url已注册，则不执行任何操作。
      * @param url {String}
      */
     load(url) {
@@ -33,7 +37,7 @@ let resources = {
     },
 
     /**
-     * @description 判断需要加载的资源是否全部完成加载和缓存
+     * 判断需要加载的资源是否全部完成加载和缓存
      * @returns {Boolean}
      */
     isReady() {
@@ -48,7 +52,7 @@ let resources = {
     },
 
     /**
-     * @description 若调用get(url)时资源还未加载完成，则返回值(null)无效。
+     * 若调用get(url)时资源还未加载完成，则返回值(null)无效。
      * @param url
      * @returns {Object} 返回绑定到url资源的DOM元素
      */
@@ -58,7 +62,7 @@ let resources = {
     },
 
     /**
-     * @description 注册资源加载完成时需要执行的回调函数
+     * 注册资源加载完成时需要执行的回调函数
      * @param callback
      */
     onReady(callback) {
