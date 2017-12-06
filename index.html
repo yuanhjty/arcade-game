@@ -1,15 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="arcade game">
-    <title>Arcade Game</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <script src="js/resources.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/engine.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="description" content="arcade game">
+        <title>Arcade Game</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet prefetch" href="https://cdn.bootcss.com/animate.css/3.5.2/animate.css">
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>据说，这片土地上埋藏着无尽的宝藏……</h1>
+            </header>
+
+            <section id="prop-panel">
+                <div id="blood" class="prop">
+                    <img class="prop-image animated" src="img/heart.png" width="20px" height="20px">
+                    <img class="prop-image animated" src="img/heart.png" width="20px" height="20px">
+                    <img class="prop-image animated" src="img/heart-dim.png" width="20px" height="20px">
+                </div>
+                <div id="key" class="prop">
+                    <img class="prop-image animated" src="img/key-dim.png" width="20px" height="40px">
+                </div>
+                <div class="prop gem">
+                    <img class="prop-image animated" src="img/gem-dim.png" width="30px" height="30px">
+                </div>
+                <div class="prop gem">
+                    <img class="prop-image animated" src="img/gem-dim.png" width="30px" height="30px">
+                </div>
+                <div class="prop gem">
+                    <img class="prop-image animated" src="img/gem-dim.png" width="30px" height="30px">
+                </div>
+                <div id="star" class="prop hide">
+                    <!--<img class="prop-image animated" src="img/star-dim.png" width="80px" height="80px">-->
+                    <img class="prop-image animated" src="img/star.png" width="80px" height="80px">
+                </div>
+            </section>
+
+            <section id="ground" class="animated"></section>
+
+            <section id="start-panel" class="prompt-panel animated zoomIn" hidden>
+                <p class="prompt">集齐散落在大地上的宝石，星光将会拨开迷雾，你就能看到埋藏宝藏的地方。<br>（用键盘上的方向键控制人物移动）</p>
+                <div class="button play">开启寻宝之旅</div>
+            </section>
+
+            <section id="win-panel" class="prompt-panel animated zoomIn" hidden>
+                <p class="prompt">好多钞票！等等，这怎么可能就是传说中的宝藏呢！！！到底是哪里出了问题...</p>
+                <img id="prize" src="img/prompt-dimes.png" alt="寻宝之旅的收获">
+                <div class="button play">我会找到答案的</div>
+            </section>
+
+            <section id="fail-panel" class="prompt-panel animated zoomIn" hidden>
+                <p class="prompt">那些巨大的虫子是这片土地的守护者，当它们感应到钥匙或钻石被拿走时，它们就会加紧巡逻的步伐！不过，当某只虫子与你发生冲突之后，它的速度也会受到影响。</p>
+                <div class="button play">原来如此，这回我会小心点！</div>
+            </section>
+
+            <footer>
+                <a href="https://github.com/yuanhjty/arcadeGame">Developed by yuanhjty</a>
+            </footer>
+        </div>
+
+        <script src="js/resources.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/engine.js"></script>
+    </body>
 </html>

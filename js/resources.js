@@ -57,7 +57,6 @@ let resources = {
      * @returns {Object} 返回绑定到url资源的DOM元素
      */
     get(url) {
-        this.load(url);        // 若url已注册，则此句不执行任何操作。
         return this.cache[url];
     },
 
