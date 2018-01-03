@@ -6,7 +6,7 @@
 > 支持：最新版的Chrom、FireFox、Opera、360极速浏览器、360安全浏览器、2345浏览器  
 > 不支持：手机端浏览器、微信浏览器、IE、Edge、Safari、百度浏览器
 
-[玩一把](https://yuanhjty.github.io/arcadeGame/)
+[玩一把](https://yuanhjty.github.io/arcade-game/)
 
 ## 游戏截图
 ![游戏截图](http://oyzng2o2u.bkt.clouddn.com/arcadeGameDemo.png)
