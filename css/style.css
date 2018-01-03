@@ -1,111 +1,111 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    width: 100%;
-    text-align: center;
-    margin: auto;
+  width: 100%;
+  text-align: center;
+  margin: auto;
 }
 
 header,
 footer {
-    width: 100%;
-    text-align: center;
+  width: 100%;
+  text-align: center;
 }
 
 header h1 {
-    margin: 12px auto 0 ;
-    font-family: '华文行楷', sans-serif;
-    color: orangered;
+  margin: 12px auto 0;
+  font-family: '华文行楷', sans-serif;
+  color: orangered;
 }
 
 footer {
-    margin: 12px;
+  margin: 12px;
 }
 
 canvas {
-    border-radius: 5px;
+  border-radius: 5px;
 }
 
 .container {
-    display: flex;
-    width: 800px;
-    margin: auto;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    background: #ffffff url('../img/geometry.png');
+  display: flex;
+  width: 800px;
+  margin: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff url('../img/geometry.png');
 }
 
 /* 道具栏样式 */
 #prop-panel {
-    display: block;
-    width: 101px;
-    height: 581px;
-    border-radius: 12px;
-    margin: 46px 12px 0 0;
-    padding: 0;
-    background-image: url('../img/prop-panel-background.png');
+  display: block;
+  width: 101px;
+  height: 581px;
+  border-radius: 12px;
+  margin: 46px 12px 0 0;
+  padding: 0;
+  background-image: url('../img/prop-panel-background.png');
 }
 
 .prop {
-    display: flex;
-    width: 100%;
-    height: 83px;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  width: 100%;
+  height: 83px;
+  justify-content: center;
+  align-items: center;
 }
 
 #blood,
 #key {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 
 #blood .prop-image {
-    margin: auto 2px;
+  margin: auto 2px;
 }
 
 .prop-image {
-    display: block;
+  display: block;
 }
 
 /* 提示栏样式 */
 .prompt-panel {
-    position: absolute;
-    top: auto;
-    bottom: auto;
-    left: auto;
-    right: auto;
-    z-index: 999;
-    text-align: center;
-    width: 400px;
-    padding: 32px 18px;
-    border-radius: 10px;
-    font-family: '华文行楷', sans-serif;
-    font-size: larger;
-    background-color: gainsboro;
+  position: absolute;
+  top: auto;
+  bottom: auto;
+  left: auto;
+  right: auto;
+  z-index: 999;
+  text-align: center;
+  width: 400px;
+  padding: 32px 18px;
+  border-radius: 10px;
+  font-family: '华文行楷', sans-serif;
+  font-size: larger;
+  background-color: gainsboro;
 }
 
 .button.play {
-    width: 100%;
-    padding: 8px;
-    margin: 0 auto;
-    border-radius: 8px;
-    background-color: rgba(2, 204, 186, 0.85);
-    cursor: pointer;
+  width: 100%;
+  padding: 8px;
+  margin: 0 auto;
+  border-radius: 8px;
+  background-color: rgba(2, 204, 186, 0.85);
+  cursor: pointer;
 }
 
-#star .hide{
-    display: none;
+#star .hide {
+  display: none;
 }
 
 #star .show {
-    display: block;
+  display: block;
 }
 
 #prize {
-    display: block;
-    margin: 0 auto 20px;
+  display: block;
+  margin: 0 auto 20px;
 }
 

@@ -7,64 +7,63 @@
  * 矩形区域类
  */
 class Rect {
-    /**
-     * @constructor
-     * @param x 左上顶点 x 坐标
-     * @param y 左上顶点 y 坐标
-     * @param width
-     * @param height
-     */
-    constructor([x = 0, y = 0] = [], [width = 0, height = 0] = []) {
-        this.x = x;
-        this.y = y;
-        this.width = width;
-        this.height = height;
-    }
+  /**
+   * @constructor
+   * @param x 左上顶点 x 坐标
+   * @param y 左上顶点 y 坐标
+   * @param width
+   * @param height
+   */
+  constructor ([x = 0, y = 0] = [], [width = 0, height = 0] = []) {
+    this.x = x
+    this.y = y
+    this.width = width
+    this.height = height
+  }
 
-    /**
-     * @getter
-     * @returns {number}
-     */
-    get x1() {
-        return this.x;
-    }
+  /**
+   * @getter
+   * @returns {number}
+   */
+  get x1 () {
+    return this.x
+  }
 
-    /**
-     * @getter
-     * @returns {number}
-     */
-    get y1() {
-        return this.y;
-    }
+  /**
+   * @getter
+   * @returns {number}
+   */
+  get y1 () {
+    return this.y
+  }
 
-    /**
-     * @getter
-     * @returns {number}
-     */
-    get x2() {
-        return this.x + this.width;
-    }
+  /**
+   * @getter
+   * @returns {number}
+   */
+  get x2 () {
+    return this.x + this.width
+  }
 
-    /**
-     * @getter
-     * @returns {number}
-     */
-    get y2() {
-        return this.y + this.height;
-    }
+  /**
+   * @getter
+   * @returns {number}
+   */
+  get y2 () {
+    return this.y + this.height
+  }
 }
 
 /**
  * 加载图片键值对集合
  * @param urlDict {Object} {name1: url1, name2: url2, ...}
  */
-function loadImages(urlDict) {
-    let urls = Object.values(urlDict);
-    for (let url of urls) {
-        resources.load(url);
-    }
+function loadImages (urlDict) {
+  let urls = Object.values(urlDict)
+  for (let url of urls) {
+    resources.load(url)
+  }
 }
-
 
 /**
  * 检测矩形区域 rect1 和矩形区域 rect2 是否有重叠
@@ -72,13 +71,12 @@ function loadImages(urlDict) {
  * @param rect2 {Rect}
  * @returns {Boolean}
  */
-function overlapping(rect1, rect2) {
-    return Math.abs(rect1.x1 - rect2.x2) < rect1.width + rect2.width
-        && Math.abs(rect1.x2 - rect2.x1) < rect1.width + rect2.width
-        && Math.abs(rect1.y1 - rect2.y2) < rect1.height + rect2.height
-        && Math.abs(rect1.y2 - rect2.y1) < rect1.height + rect2.height
+function overlapping (rect1, rect2) {
+  return Math.abs(rect1.x1 - rect2.x2) < rect1.width + rect2.width
+    && Math.abs(rect1.x2 - rect2.x1) < rect1.width + rect2.width
+    && Math.abs(rect1.y1 - rect2.y2) < rect1.height + rect2.height
+    && Math.abs(rect1.y2 - rect2.y1) < rect1.height + rect2.height
 }
-
 
 /**
  * 检测 矩形区域 myRect 是否在矩形区域 rect 内部
@@ -86,11 +84,10 @@ function overlapping(rect1, rect2) {
  * @param rect {Rect}
  * @returns {Boolean}
  */
-function inRect(myRect, rect) {
-    return (myRect.x1 >= rect.x1 && myRect.y1 >= rect.y1
-        && myRect.x2 <= rect.x2 && myRect.y2 <= rect.y2);
+function inRect (myRect, rect) {
+  return (myRect.x1 >= rect.x1 && myRect.y1 >= rect.y1
+    && myRect.x2 <= rect.x2 && myRect.y2 <= rect.y2)
 }
-
 
 /**
  * 以行和列为单位，创建与地图块对齐的矩形区域
@@ -100,11 +97,10 @@ function inRect(myRect, rect) {
  * @param colsNum 列数
  * @returns {Rect}
  */
-function createGroundRect(row, col, rowsNum, colsNum) {
-    return new Rect([col * COL_W, row * ROW_H + OFFSET_V],
-        [colsNum * COL_W, rowsNum * ROW_H]);
+function createGroundRect (row, col, rowsNum, colsNum) {
+  return new Rect([col * COL_W, row * ROW_H + OFFSET_V],
+    [colsNum * COL_W, rowsNum * ROW_H])
 }
-
 
 /**
  * 根据 baseRect 和 shapeRelationMatrix 生成模拟复杂形状的矩形集。
@@ -117,22 +113,21 @@ function createGroundRect(row, col, rowsNum, colsNum) {
  *  rect.width / baseRect.width, rect.height / baseRect.height]
  * @returns {Array}
  */
-function getShapeRects(baseRect, shapeRelationMatrix) {
-    let shapeRects = [];
+function getShapeRects (baseRect, shapeRelationMatrix) {
+  let shapeRects = []
 
-    for (let matrixRow of shapeRelationMatrix) {
-        shapeRects.push(new Rect([
-            baseRect.x + baseRect.width * matrixRow[0],
-            baseRect.y + baseRect.height * matrixRow[1]
-        ], [
-            baseRect.width * matrixRow[2],
-            baseRect.height * matrixRow[3]
-        ]));
-    }
+  for (let matrixRow of shapeRelationMatrix) {
+    shapeRects.push(new Rect([
+      baseRect.x + baseRect.width * matrixRow[0],
+      baseRect.y + baseRect.height * matrixRow[1]
+    ], [
+      baseRect.width * matrixRow[2],
+      baseRect.height * matrixRow[3]
+    ]))
+  }
 
-    return shapeRects;
+  return shapeRects
 }
-
 
 /**
  * 检测以形状矩形集表示的两个图形之间是否有碰撞
@@ -140,14 +135,14 @@ function getShapeRects(baseRect, shapeRelationMatrix) {
  * @param secondShapeRects {[Rect, ...]}
  * @returns {Boolean}
  */
-function shapesInCollision(firstShapeRects, secondShapeRects) {
-    for (let firstShapeRect of firstShapeRects) {
-        for (let secondShapeRect of secondShapeRects) {
-            if (overlapping(firstShapeRect, secondShapeRect)) {
-                return true;
-            }
-        }
+function shapesInCollision (firstShapeRects, secondShapeRects) {
+  for (let firstShapeRect of firstShapeRects) {
+    for (let secondShapeRect of secondShapeRects) {
+      if (overlapping(firstShapeRect, secondShapeRect)) {
+        return true
+      }
     }
-    return false;
+  }
+  return false
 }
 
