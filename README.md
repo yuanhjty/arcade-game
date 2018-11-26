@@ -9,7 +9,7 @@
 [玩一把](https://yuanhjty.github.io/arcade-game/)
 
 ## 游戏截图
-![游戏截图](http://oyzng2o2u.bkt.clouddn.com/arcadeGameDemo.png)
+![游戏截图](https://image-hosting-1256256014.cos.ap-shanghai.myqcloud.com/arcadeGameDemo.png)
 
 ## 游戏说明
 #### 1. 游戏面板划分
